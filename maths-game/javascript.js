@@ -33,7 +33,7 @@ document.getElementById("startreset").onclick = function() {
         score = 0;
         document.getElementById("scorevalue").innerHTML = score;
         show("timeremaining");
-        timeremaining = 5;
+        timeremaining = 60;
         document.getElementById("timeremainingvalue").innerHTML = timeremaining;
         // hide game over box
         hide("gameOver");
@@ -42,6 +42,36 @@ document.getElementById("startreset").onclick = function() {
 
         // generate a new Q&A
         generateQA();
+    }
+}
+
+// Clicking on an answer box
+for (i=1;i<5;i++) {
+    document.getElementById("box"+i).onclick = function() {
+        // check if we are playing
+        if (playing == true) {
+            if (this.innerHTML == correctAnswer) {
+                //correct answer
+                score++;
+                document.getElementById("scorevalue").innerHTML = score;
+                // hide wrong box and show correct box
+                hide("wrong");
+                show("correct");
+                setTimeout(function(){
+                    hide("correct");
+                }, 1000);
+
+                // Generate new Q&A
+                generateQA();
+            } else {
+                //wrong answer
+                hide("correct");
+                show("wrong");
+                setTimeout(function(){
+                    hide("wrong");
+                }, 1000);
+            }
+        }
     }
 }
 
