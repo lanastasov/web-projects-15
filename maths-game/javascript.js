@@ -22,6 +22,8 @@
 
 var playing = false;
 var score;
+var action;
+var timeremaining;
 document.getElementById("startreset").onclick = function() {
     if(playing == true) {
         location.reload(); //reload page
@@ -29,8 +31,60 @@ document.getElementById("startreset").onclick = function() {
         playing = true;
         score = 0;
         document.getElementById("scorevalue").innerHTML = score;
-        document.getElementById("timeremaining").style.display = "block";
+        show("timeremaining");
+        timeremaining = 5;
+        document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+        // hide game over box
+        hide("gameOver");
         document.getElementById("startreset").innerHTML = "Reset Game";
+        startCountdown();
+
+        // generate a new Q&A
+        generateQA();
     }
 }
 
+//functions
+
+
+// start counter
+function startCountdown() {
+    action = setInterval(function(){
+        timeremaining -= 1;
+        document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+        if (timeremaining == 0 ) {
+            //game over
+            stopCountdown();
+            show("gameOver");
+            document.getElementById("gameOver").innerHTML = "<p>Game Over</p><p>Your score is " + score + ".</p>"
+            document.getElementById("timeremaining").style.display = "none";
+            hide("timeremaining");
+            hide("correct");
+            hide("wrong");
+            playing = false;
+            document.getElementById("startreset").innerHTML = "Start Game";
+        }
+    }, 1000)
+}
+
+// stop counter
+
+function stopCountdown() {
+    clearInterval(action);
+}
+
+// hide an element
+function hide(Id) {
+    document.getElementById(Id).style.display = "none";
+}
+
+// shown an element
+function show(Id) {
+    document.getElementById(Id).style.display = "block";
+}
+
+// generate question and multiple answers
+
+function generateQA() {
+
+}
