@@ -19,7 +19,8 @@
     // explode fruit
 var playing = false;
 var score;
-trialsLeft;
+var trialsLeft;
+var fruits = ['apple', 'banana', 'cherries', 'grapes', 'mango', 'orange', 'peach', 'pear', 'watermelon'];
 $(function(){
     $("#startreset").click(function() {
         if (playing == true) {
@@ -36,12 +37,30 @@ $(function(){
             //     $("#trialsLeft").append(" X ");
             // }
             addHearts();
+
+            // change button text to reset game
+            $("#startreset").html("Reset Game");
+
+            // start sending fruits
+            startAction();
         }
     });
 });
 
 function addHearts() {
     for (i=0; i<trialsLeft; i++) {
-        $("#trialsLeft").append(" X ");
+        $("#trialsLeft").append('<img src="images/heart.png" class="life">' );
     }
+}
+
+function startAction() {
+    //$("#fruitsContainer").append('<img src="images/aplle.png" class="fruits">');
+    $("#fruit1").show();
+    chooseFruit(); // choose a random fruit
+    $("#fruit1").css({'left' : Math.round(550*Math.random()), 'top' : -50});
+}
+
+// generate a random fruit
+function chooseFruit() {
+    $("#fruit1").attr('src', 'images/' + fruits[Math.round(8*Math.random())] + '.png');
 }
