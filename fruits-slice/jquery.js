@@ -24,32 +24,51 @@ var step;
 var action; // used for setInterval function
 var fruits = ['apple', 'banana', 'cherries', 'grapes', 'mango', 'orange', 'peach', 'pear', 'watermelon'];
 $(function(){
-    $("#startreset").click(function() {
-        if (playing == true) {
-            location.reload();
-        } else {
-            playing = true; 
-            score = 0;
-            $("#scorevalue").html(score);
+$("#startreset").click(function() {
+    if (playing == true) {
+        location.reload();
+    } else {
+        playing = true; 
+        score = 0;
+        $("#scorevalue").html(score);
 
-            // show trials left
-            $("#trialsLeft").show();
-            trialsLeft = 3;
-            // for (i=0; i<trialsLeft; i++) {
-            //     $("#trialsLeft").append(" X ");
-            // }
-            addHearts();
+        // show trials left
+        $("#trialsLeft").show();
+        trialsLeft = 3;
+        // for (i=0; i<trialsLeft; i++) {
+        //     $("#trialsLeft").append(" X ");
+        // }
+        addHearts();
 
-            // hide game over box
-            $("#gameOver").hide();
+        // hide game over box
+        $("#gameOver").hide();
 
-            // change button text to reset game
-            $("#startreset").html("Reset Game");
+        // change button text to reset game
+        $("#startreset").html("Reset Game");
 
-            // start sending fruits
-            startAction();
-        }
-    });
+        // start sending fruits
+        startAction();
+    }
+});
+
+$("#fruit1").mouseover(function(){
+    score++;
+    $("#scorevalue").html(score);
+    document.getElementById("slicesound").play();
+    // stop fruit and hide it
+    // stopAction();
+    // stop fruit
+    clearInterval(action);
+
+    // hide fruit
+    $("#fruit1").hide("explode", 500); //slice fruit
+
+    // send new fruit
+    setTimeout(function() {
+        startAction();
+    }, 500);
+
+
 });
 
 function addHearts() {
@@ -85,11 +104,12 @@ function startAction() {
                 step = 1+Math.round(5*Math.random());
 
                 // reduce trials by one
-                trialsLeft --;
+                trialsLeft--;
 
                 // populate trialsLeft box
                 addHearts();
              } else { // game over
+                console.log("Game Over");
                 playing = false; // we are not playing anymore
                 $("#startreset").html("Start Game"); // change button to Start Game
                 $("#gameOver").show();
@@ -112,3 +132,5 @@ function stopAction() {
     clearInterval(action);
     $("#fruit1").hide();
 }
+
+});
