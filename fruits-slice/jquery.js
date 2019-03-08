@@ -66,7 +66,7 @@ $("#fruit1").mouseover(function(){
     // send new fruit
     setTimeout(function() {
         startAction();
-    }, 500);
+    }, 600);
 
 
 });
