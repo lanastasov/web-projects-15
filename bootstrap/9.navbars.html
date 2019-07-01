@@ -9,19 +9,61 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>navbars</title>
 </head>
 
 <body>
-    <nav role="navigation" class="navbar-inverse">
+    <nav role="navigation" class="bg-dark navbar-dark navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="" class="navbar-brand"> Store </a>
+                <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fas fa-bars"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">All Products</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Departments <i class="fas fa-caret-down"></i></a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search" action="">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-info">Go</button>
+                        </span>
+                        <label for="search" class="sr-only">Search</label>
+                        <input type="text" id="search" class="form-control" placeholder="search">
+                        <span class="fas fa-search form-control-feedback">
+
+                        </span>
+                    </div>
+                </form>
+                <form action="" class="navbar-form navbar-right">
+                    <input type="button" value="login" class="btn btn-success">
+                </form>
             </div>
         </div>
     </nav>
-    <div class="container-fluid"></div>
+    <div class="container-fluid" style="margin-top:60px">
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
