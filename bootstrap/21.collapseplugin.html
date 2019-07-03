@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Introduction</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <a href="#collapse01" data-toggle="collapse" class="btn btn-primary">Link</a>
+        <button type="button" data-target="#collapse02" data-toggle="collapse" class="btn btn-primary">Button</button>
+        <div class="bg-danger collapse" id="collapse01">
+            <p> Collapsible content 1.</p>
+            <p> Collapsible content 1.</p>
+            <p> Collapsible content 1.</p>
+        </div>
+        <div class="bg-warning collapse" id="collapse02">
+            <p> Collapsible content 2.</p>
+            <p> Collapsible content 2.</p>
+            <p> Collapsible content 2.</p>
+        </div>
+        <br>
+        <br>
+        <div id="accordion" class="panel-group">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#collapse1" data-toggle="collapse" data-parent="#accordion">Section 1</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse in" id="collapse1">
+                    <div class="panel-body">
+                        <p>Collapsible content 1.</p>
+                        <p>Collapsible content 1.</p>
+                        <p>Collapsible content 1.</p>
+                        <p>Collapsible content 1.</p>
+                        <p>Collapsible content 1.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#collapse2" data-toggle="collapse" data-parent="#accordion">Section 2</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="collapse2">
+                    <div class="panel-body">
+                        <p>Collapsible content 2.</p>
+                        <p>Collapsible content 2.</p>
+                        <p>Collapsible content 2.</p>
+                        <p>Collapsible content 2.</p>
+                        <p>Collapsible content 2.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#collapse3" data-toggle="collapse" data-parent="#accordion">Section 3</a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="collapse3">
+                    <div class="panel-body">
+                        <p>Collapsible content 3.</p>
+                        <p>Collapsible content 3.</p>
+                        <p>Collapsible content 3.</p>
+                        <p>Collapsible content 3.</p>
+                        <p>Collapsible content 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('#collapse2').collapse('show');
+            $('#collapse1').on('hidden.bs.collapse', function () {
+                window.alert("Section 1 hidden!");
+            });
+        });
+
+    </script>
+</body>
+
+</html>
