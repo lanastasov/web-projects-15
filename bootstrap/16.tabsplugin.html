@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <title>Navs</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li role="presentation" class="nav-link"><a class="nav-link" href="#home" data-toggle="tab"> <span
+                        class="fa fa-home"></span>
+                    Home</a></li>
+            <li role="presentation" class="nav-link"><a class="nav-link" href="#messages" data-toggle="tab"> <span
+                        class="fa fa-envelope"></span>
+                    Messages <span class="badge">3</span> </a></li>
+            <li role="presentation" class="nav-link"><a class="nav-link" href="#notifications"
+                    data-toggle="tab">Notifications<span class="badge">3</span></a></li>
+            <li role="presentation" class="nav-link"><a class="nav-link" href="#contactUs" data-toggle="tab">Contact
+                    us</a></li>
+        </ul>
+
+        <!-- <ul class="nav nav-pills nav-stacked">
+            <li class="nav-item " role="presentation"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item " role="presentation"><a class="nav-link" href="#">Page 1</a></li>
+            <li class="nav-item " role="presentation"><a class="nav-link" href="#">Page 2</a></li>
+            <li class="nav-item " role="presentation"><a class="nav-link disabled" href="#">Page 3</a></li>
+        </ul> -->
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active fade in" id="home">
+                <p>Home Content.</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+            <div class="tab-pane fade" id="messages">
+                <p>Messages Content.</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+            <div class="tab-pane fade" id="notifications">
+                <p>Notifications Content.</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+            <div class="tab-pane fade" id="contactUs">
+                <p>Contact Us.</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#myTabs a:last').tab('show');
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (event) {
+            window.alert('The active tab is:' + $(event.target).text() + '. the previous tab is: ' + $(event.relatedTarget).text());
+        });
+    </script>
+</body>
+
+</html>
