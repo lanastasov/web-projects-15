@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Scrollspy plugin </title>
+</head>
+
+<body>
+    <nav role="navigation" class="bg-dark navbar-dark navbar-fixed-bottom" id="mynavBar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand"> Store </a>
+                <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fas fa-bars"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#allProducts">All Products</a></li>
+                    <li><a href="#help">Help</a></li>
+                    <li><a href="#department">Departments <i class="fas fa-caret-down"></i></a></li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search" action="">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-info">Go</button>
+                        </span>
+                        <label for="search" class="sr-only">Search</label>
+                        <input type="text" id="search" class="form-control" placeholder="search">
+                        <span class="fas fa-search form-control-feedback">
+
+                        </span>
+                    </div>
+                </form>
+                <form action="" class="navbar-form navbar-right">
+                    <input type="button" value="login" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid" style="margin-top:60px; height:300px; overflow:auto" data-spy="scroll"
+        data-target="#mynavBar">
+        <h4 id="allProducts">All Products</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <h4 id="help">Help</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <h4 id="department">Department</h4>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+        <p>Some text</p>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script>
+        $('#mynavBar').on('activate.bs.scrollspy', function () {
+            $('.btn-success').toggleClass('btn-warning')
+        });
+    </script>
+</body>
+
+</html>
