@@ -16,7 +16,8 @@
 <body>
 
     <div class="container-fluid">
-        <button type="button" class="btn btn-primary" data-target="#myInquiry" data-toggle="modal">Contact us</button>
+        <button type="button" class="btn btn-primary" data-target="#myInquiry" data-toggle="modal"
+            data-ordernumber="1122">Order Number: 1122 - Contact us</button>
         <div class="modal" id="myInquiry" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -52,7 +53,12 @@
         crossorigin="anonymous"></script>
     <script>
         $("#myInquiry").on('hide.bs.modal', function () {
-            window.alert('Hi!');
+            // window.alert('Hi!');
+        });
+        $('#myInquiry').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var orderNumber = button.data('ordernumber');
+            $(this).find('#myModalLabel').text('Order number: ' + orderNumber);
         });
     </script>
 </body>
