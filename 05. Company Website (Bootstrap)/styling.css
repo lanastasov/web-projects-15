@@ -1,9 +1,15 @@
 /* Style body by adding background image and set it to cover, add font-family */
+html{
+    height: 100%;
+}
 body{
     font-family: 'Arvo', serif;
     background: url(https://freenaturestock.s3.us-east-1.amazonaws.com/232.jpg) no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
+    position: relative;
+    min-height:100%;
+    padding-bottom:48px;
 }
 /* Style brand */
 .logo{
@@ -79,6 +85,9 @@ body{
     color: grey;
     font-size: 15px;
     padding: 10px 0;
+    position: absolute;
+    left:0; right:0; bottom:0;
+    height: 48px;
 }
 
 /* use media queries to change icons size in small devices */
