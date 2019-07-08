@@ -28,11 +28,30 @@ body{
     cursor: pointer;
 }
 /* Style jumbotron */
-
+.jumbotron{
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    letter-spacing: 2.5px;
+}
 /* limit the width of the icons section */
-
+.container{
+    max-width: 1000px;
+}
 /* Style icons section using bootstrap gid system */
+.bodyimage{
+    height: 100px;
+}
+.col-md-4{
+    text-align: center;
+    color: #fff;
+}
 
+.icons p{
+    font-size: 15px;
+}
 /* Style  contact button */
 
 /* Style footer */
