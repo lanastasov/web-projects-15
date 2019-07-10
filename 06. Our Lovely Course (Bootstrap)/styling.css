@@ -70,6 +70,28 @@ Video does not work in small devices:
 .aboutImage{
     height: 120px;
 }
+/* Style the promise section:
+-add padding-top for early activation of the nav link.
+-set the width of the carousel and center input
+-set the height of pictures and center them inside the carousel items
+-move the carousel caption under the pictures */
+#promise{
+    padding-top: 100px;
+}
+#myCarousel{
+    width: 60%;
+    margin: 0 auto;
+}
+.carousel-inner .item img{
+    height: 400px;
+    margin: 0 auto;
+}
+.carousel-caption{
+    position: relative;
+    left: auto;
+    right: auto;
+    height: 200px;
+}
 /* Style the pictures and nav-brand for different screens */
 
 /* Style the navigation bar using a navbar css generator */
