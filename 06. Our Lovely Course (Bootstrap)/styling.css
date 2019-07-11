@@ -3,6 +3,7 @@
 -Add a font family to the whole page */
 body{
     font-family: 'Vollkorn', sans-serif;
+    position: relative;
 }
 
 /* 
@@ -22,7 +23,7 @@ Video does not work in small devices:
 -Hide the video and set picture as background (use media queries)
 -make it spread accross the whole webpage */
 
-@media (max-width:768px){
+@media (max-device-width:768px){
     body{
         background: url(images/architectural-design-art.jpg) center center fixed;
         background-size: cover;
@@ -123,6 +124,14 @@ Video does not work in small devices:
         font-size: 12px;
     }
 
+}
+/* Style the footer*/
+.footer{
+    background-color: rgba(29, 167, 179, 0.1);
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 150px;
+    font-size: 15px;
 }
 /* Style the navigation bar using a navbar css generator */
 .navbar-custom {
