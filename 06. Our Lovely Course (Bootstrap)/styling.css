@@ -22,6 +22,16 @@ Video does not work in small devices:
 -Hide the video and set picture as background (use media queries)
 -make it spread accross the whole webpage */
 
+@media (max-width:768px){
+    body{
+        background: url(images/architectural-design-art.jpg) center center fixed;
+        background-size: cover;
+    }
+    #bgvideo{
+        display: none;
+    }
+}
+
 /* Style the Home section and elements inside it:
 - reduce the margin-bottom of h1 and h2
 - style the button and its hove state */
@@ -94,7 +104,26 @@ Video does not work in small devices:
     height: 200px;
 }
 /* Style the pictures and nav-brand for different screens */
+@media (max-width:768px){
+    .carousel-inner .item img{
+        height: 300px;
+    }
+    .carousel-inner h2{
+        font-size: 23px;
+    }
+}
+@media (max-width:400px){
+    .carousel-inner .item img{
+        height: 200px;
+    }
+    .carousel-inner h2{
+        font-size: 17px;
+    }
+    .navbar-brand{
+        font-size: 12px;
+    }
 
+}
 /* Style the navigation bar using a navbar css generator */
 .navbar-custom {
     font-size: 18px;
