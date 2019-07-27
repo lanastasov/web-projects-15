@@ -23,7 +23,7 @@ Video does not work in small devices:
 -Hide the video and set picture as background (use media queries)
 -make it spread accross the whole webpage */
 
-@media (max-device-width:768px){
+@media (max-width:768px){
     body{
         background: url(images/architectural-design-art.jpg) center center fixed;
         background-size: cover;
