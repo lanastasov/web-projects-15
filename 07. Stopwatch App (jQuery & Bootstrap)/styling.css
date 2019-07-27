@@ -1,0 +1,22 @@
+body {
+    background: url(images/tree.jpg) center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+#header{
+    text-align: center;
+    font-size: 7vw;
+}
+
+/* Lap */
+#lap{
+    text-align: right;
+    font-size: 4vw;
+}
+
+/* Time */
+#time{
+    text-align: center;
+    font-size: 10vw;
+}
