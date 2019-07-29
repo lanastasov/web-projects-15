@@ -56,11 +56,11 @@ $(function () {
     function startAction() {
         action = setInterval(function () {
             timeCounter++;
-            if (timeCounter = 100 * 60 * 100) {
+            if (timeCounter == 100 * 60 * 100) {
                 timeCounter = 0;
             }
             lapCounter++;
-            if (lapCounter = 100 * 60 * 100) {
+            if (lapCounter == 100 * 60 * 100) {
                 lapCounter = 0;
             }
             updateTime();
