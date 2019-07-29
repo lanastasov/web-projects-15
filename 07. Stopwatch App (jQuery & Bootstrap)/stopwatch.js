@@ -29,17 +29,36 @@ $(function () {
     // start counter
 
     // click on stopButton
+    $("#stopButton").click(function () {
+        hideshowButtons("#resumeButton", "#resetButton");
+        clearInterval(action);
+    });
     //   show resume and reset buttons
     //   stop counter
 
     // click on resumeButton
+    $("#resumeButton").click(function () {
+        hideshowButtons("#stopButton", "#lapButton");
+        startAction();
+    });
     //   show stop and lap buttons
     //   start action
 
     // click on resetButton
+    $("#resetButton").click(function () {
+        location.reload();
+    });
     //   reload the page
 
     // click on lapButton
+    $("#lapButton").click(function () {
+        if (mode) {
+            clearInterval(action);
+            lapCounter = 0;
+            addLap();
+            startAction();
+        }
+    });
     //   if mode is On
     //     stop action
     //     resetLap and print lap details
@@ -96,5 +115,23 @@ $(function () {
         } else {
             return number;
         }
+    }
+
+    // addLap function: print lap details inside the lap box
+    function addLap() {
+        lapNumber++;
+        var myLapDetails =
+            '<div class="lap">' +
+            '<div class="laptimetitle">' +
+            'Lap' + lapNumber +
+            '</div>' +
+            '<div class="laptime">' +
+            '<span>' + format(lapMinutes) + '</span>' +
+            ':<span>' + format(lapSeconds) + '</span>' +
+            ':<span>' + format(lapCentiseconds) + '</span>' +
+
+            '</div>' +
+            '</div>';
+        $(myLapDetails).prependTo("#laps");
     }
 });
