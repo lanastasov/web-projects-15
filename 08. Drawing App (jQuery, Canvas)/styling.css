@@ -1,0 +1,33 @@
+/* center all elements and add background image */
+body{
+    text-align: center;
+    background: url(images/paintbg.jpg) center center fixed;
+    background-size: cover;
+}
+
+/* title */
+#header{
+    background: linear-gradient(white, rgba(67,169,228,0.9));
+    background: -webkit-linear-gradient(white, rgba(67,169,228,0.9));
+    background: -moz-linear-gradient(white, rgba(67,169,228,0.9));
+    background: -o-linear-gradient(white, rgba(67,169,228,0.9));
+    background: -ms-linear-gradient(white, rgba(67,169,228,0.9));
+    height: 80px;
+    width: 500px;
+    margin: 10px auto;
+    font-size: 3em;
+    color: #fff;
+    line-height: 80px;
+}
+
+/* inputs container */
+.inputContianer{
+    width: 200px;
+    margin: 0 auto;
+}
+
+/* color input, line thickness, slider */
+.input{
+    height: 30px;
+    font-size: 1.3em;
+}
