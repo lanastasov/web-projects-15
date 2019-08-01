@@ -8,6 +8,24 @@ $(function () {
         }
     });
 
+    var paint = false;
+    var paint_erase = "paint";
+    var canvas = document.getElementById("paint");
+    var ctx = canvas.getContext("2d");
+    var container = $("#container");
+    var mouse = { x: 0, y: 0 };
+
+    //onload load saved work from localStorage
+
+    ctx.lineWidth = 3;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+
+    container.mousedown(function () {
+        paint = true;
+        window.alert(paint);
+    });
+
     var canvas = document.getElementById("paint");
     var context = canvas.getContext('2d');
 
