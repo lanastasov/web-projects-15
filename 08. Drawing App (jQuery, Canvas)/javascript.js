@@ -1,12 +1,5 @@
 $(function () {
-    $("#slider").slider({
-        min: 3,
-        max: 30,
-        slide: function (event, ui) {
-            $("#circle").height(ui.value);
-            $("#circle").width(ui.value);
-        }
-    });
+
 
     var paint = false;
     var paint_erase = "paint";
@@ -16,6 +9,13 @@ $(function () {
     var mouse = { x: 0, y: 0 };
 
     //onload load saved work from localStorage
+    if (localStorage.getItem("imgCanvas") != null) {
+        var img = new Image();
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0);
+        }
+        img.src = localStorage.getItem("imgCanvas");
+    };
 
     ctx.lineWidth = 3;
     ctx.lineJoin = "round";
@@ -36,7 +36,7 @@ $(function () {
         if (paint == true) {
             if (paint_erase == "paint") {
                 // get color input
-                ctx.strokeStyle = "red";
+                ctx.strokeStyle = $("#paintColor").val();
             } else {
                 //white color
                 ctx.strokeStyle = "white";
@@ -60,6 +60,16 @@ $(function () {
         $("#erase").removeClass("eraseMode");
     });
 
+    //click on save button
+    $("#save").click(function () {
+        if (typeof (localStorage) !== null) {
+            localStorage.setItem("imgCanvas", canvas.toDataURL());
+        } else {
+            window.alert("Your browser does not support local storage!");
+        }
+
+    });
+
     $("#erase").click(function () {
         if (paint_erase == "paint") {
             paint_erase = "erase";
@@ -69,4 +79,19 @@ $(function () {
         $(this).toggleClass("eraseMode");
     });
 
+    //change color input
+    $("#paintColor").change(function () {
+        $("#circle").css("background-color", $(this).val())
+    });
+
+    //change lineWidth using slider
+    $("#slider").slider({
+        min: 3,
+        max: 30,
+        slide: function (event, ui) {
+            $("#circle").height(ui.value);
+            $("#circle").width(ui.value);
+            ctx.lineWidth = ui.value;
+        }
+    });
 });
