@@ -64,6 +64,11 @@ body{
     margin: 10px auto;
 }
 
+#paint{
+    background-color: #fff;
+    cursor: crosshair;
+}
+
 /* inputs container */
 .inputContainer2{
     width: 399px;
