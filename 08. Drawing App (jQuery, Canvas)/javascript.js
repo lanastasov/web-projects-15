@@ -21,32 +21,52 @@ $(function () {
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
 
-    container.mousedown(function () {
+    container.mousedown(function (e) {
         paint = true;
-        window.alert(paint);
+        // window.alert(paint);
+        ctx.beginPath();
+        mouse.x = e.pageX - this.offsetLeft;
+        mouse.y = e.pageY - this.offsetTop;
+        ctx.moveTo(mouse.x, mouse.y);
     });
 
-    var canvas = document.getElementById("paint");
-    var context = canvas.getContext('2d');
+    container.mousemove(function (e) {
+        mouse.x = e.pageX - this.offsetLeft;
+        mouse.y = e.pageY - this.offsetTop;
+        if (paint == true) {
+            if (paint_erase == "paint") {
+                // get color input
+                ctx.strokeStyle = "red";
+            } else {
+                //white color
+                ctx.strokeStyle = "white";
+            }
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+        }
+    });
 
-    // draw a line
-    // declare new path
-    context.beginPath();
-    // set line width
-    context.lineWidth = 40;
-    // set line color
-    context.strokeStyle = '#42e565';
-    //set cap to the line (round, butt, square)
-    context.lineCap = "round";
-    // set line join styleMedia(bevel, round, miter)
-    context.lineJoin = "round";
+    container.mouseup(function () {
+        paint = false;
+    });
 
-    context.moveTo(50, 50);
-    // draw a straight line from starting point to a new position
-    context.lineTo(200, 200);
+    container.mouseleave(function () {
+        paint = false;
+    });
 
-    context.lineTo(400, 100);
+    $("#reset").click(function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        paint_erase = "paint";
+        $("#erase").removeClass("eraseMode");
+    });
 
-    //make line visible
-    context.stroke();
+    $("#erase").click(function () {
+        if (paint_erase == "paint") {
+            paint_erase = "erase";
+        } else {
+            paint_erase = "paint";
+        }
+        $(this).toggleClass("eraseMode");
+    });
+
 });
