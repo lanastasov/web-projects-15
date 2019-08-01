@@ -31,3 +31,23 @@ body{
     height: 30px;
     font-size: 1.3em;
 }
+
+#slider{
+    margin: 10px auto;
+}
+
+#circle{
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    background: black;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#thicknessInput{
+    position: relative;
+}
