@@ -2,6 +2,8 @@ const url = require('url');
 const path = require('path');
 const fs = require('fs');
 const buildBreadcrumb = require('./breadcrumb.js')
+const buildMainContent = require('./mainContent.js')
+
 const staticBasePath = path.join(__dirname, '..','static');
 
 const respond = (request, response) => {
@@ -39,10 +41,16 @@ const respond = (request, response) => {
         pathElements = pathElements.filter(element => element !== '');
         const folderName = pathElements[0];
         console.log(folderName);
-        data = data.replace('page_title', folderName);
-
+        
         const breadcrumb = buildBreadcrumb(pathname);
+        
+
+        const mainContent = buildMainContent(fullStaticPath, pathname);
+
+        data = data.replace('page_title', folderName);
         data = data.replace('pathname', breadcrumb);
+        data = data.replace('mainContent', mainContent);
+
         response.statusCode = 200;
         response.write(data);
         response.end();
