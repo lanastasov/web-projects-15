@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const calculateSizeD = require('./calculateSizeD.js');
+const calculateSizeF = require('./calculateSizeF.js');
 
 const buildMainContent = (fullStaticPath, pathname) => {
     let mainContent = '';
@@ -36,7 +37,7 @@ const buildMainContent = (fullStaticPath, pathname) => {
         }else if (itemDetails.stats.isFile()){
             itemDetails.icon = '<ion-icon name="document"></ion-icon>';
 
-            //  [itemDetails.size, itemDetails.sizeBytes] = calculateSizeF(itemFullStaticPath);
+             [itemDetails.size, itemDetails.sizeBytes] = calculateSizeF(itemDetails.stats);
         }
 
         //when was the file last changed? (unix timestamp)

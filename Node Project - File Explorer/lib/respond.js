@@ -53,8 +53,15 @@ const respond = (request, response) => {
 
         response.statusCode = 200;
         response.write(data);
-        response.end();
+        return response.end();
     };
+
+    if(!stats.isFile()) {
+        response.statusCode = 401;
+        response.write('401; Access denied');
+        console.log('not a file');
+        return response.end();
+    }
   
 }
 module.exports = respond;
