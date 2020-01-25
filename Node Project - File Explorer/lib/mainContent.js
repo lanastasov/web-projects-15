@@ -16,11 +16,11 @@ const buildMainContent = (fullStaticPath, pathname) => {
     }
     
     items.forEach(item => {
-        const link = path.join(pathname, item);
-
         let itemDetails = {};
-        let icon, stats;
+        itemDetails.name = item;
+        const link = path.join(pathname, item);
         const itemFullStaticPath = path.join(fullStaticPath, item);
+
         try{
             itemDetails.stats = fs.statSync(itemFullStaticPath);
         }catch(err){
@@ -38,11 +38,19 @@ const buildMainContent = (fullStaticPath, pathname) => {
 
             //  [itemDetails.size, itemDetails.sizeBytes] = calculateSizeF(itemFullStaticPath);
         }
+
+        //when was the file last changed? (unix timestamp)
+        itemDetails.timeStamp = parseInt(itemDetails.stats.mtimeMs);
+
+        //convert timestamp to a data
+        itemDetails.date  = new Date(itemDetails.timeStamp);
+
+        itemDetails.date = itemDetails.date.toLocaleString()
         
-        mainContent += `<tr>
+        mainContent += `<tr data-name="${item}" data-size="${itemDetails.sizeBytes}" data-time="${itemDetails.timeStamp}">
         <td>${itemDetails.icon}<a href="${link}">${item}</a></td>
         <td>${itemDetails.size}</td>
-        <td>12/08/2019, 09:00:00 PM</td>
+        <td>${itemDetails.date}</td>
         </tr>`
     });
 
